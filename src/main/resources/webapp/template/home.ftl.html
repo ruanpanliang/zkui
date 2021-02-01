@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 -->
-<#import "layouts/main-layout.ftl.html" as main> 
+<#import "layouts/main-layout.ftl.html" as main>
 <@main.page>
 
 <div class="container">
@@ -27,15 +27,15 @@
                 <p class="text-success text-center">${flashMsg}</p>
                 <#else>
                 &nbsp;
-                </#if> 
+                </#if>
 
                 <ul class="breadcrumb">
-                    <#assign breadCrumbPath = ""> 
+                    <#assign breadCrumbPath = "">
                     <#if breadCrumbLst?has_content>
                     <#list breadCrumbLst as breadCrumb>
 
                     <#if breadCrumb != "">
-                    <#assign breadCrumbPath = breadCrumbPath + "/" +  breadCrumb> 
+                    <#assign breadCrumbPath = breadCrumbPath + "/" +  breadCrumb>
                     </#if>
 
                     <li><a href="/home?zkPath=${breadCrumbPath}" class="breadcrumb-select">${breadCrumb}</a></li>
@@ -79,9 +79,9 @@
                             <td>
                                 <#if authRole?? && authRole == 'ADMIN' >
                                 <#if leaf.value??>
-                                <a href="#" data-toggle="modal" class="href-select" data-target="#addPropertyModal" itemprop="${leaf.strValue?html}" >${leaf.name}</a> 
+                                <a href="#" data-toggle="modal" class="href-select" data-target="#addPropertyModal" itemprop="${leaf.strValue?html}" >${leaf.name}</a>
                                 <#else>
-                                <a href="#" data-toggle="modal" class="href-select" data-target="#addPropertyModal" itemprop="" >${leaf.name}</a> 
+                                <a href="#" data-toggle="modal" class="href-select" data-target="#addPropertyModal" itemprop="" >${leaf.name}</a>
                                 </#if>
                                 <#else>
                                 ${leaf.name}
@@ -153,9 +153,9 @@
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 <input type="submit" name="action" value="Save Node" class="btn btn-primary"/>
                             </div>
-                        </div> 
+                        </div>
                     </div>
-                </div> 
+                </div>
 
                 <!-- Add Property Modal -->
                 <div class="modal fade" id="addPropertyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -173,7 +173,7 @@
                                 <br/>
                                 <div class="input-group input-group-lg">
                                     <span class="input-group-addon">Value</span>
-                                    <textarea id="newValue" name="newValue" class="form-control" placeholder="value" style="resize:vertical;" ></textarea>
+                                    <textarea id="newValue" name="newValue" class="form-control" placeholder="value" style="resize:vertical;height: 550px;" rows="20"></textarea>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -204,7 +204,7 @@
                     </div>
                 </div>
 
-            </div>        
+            </div>
 
 
         </div>

@@ -145,7 +145,7 @@ public class Home extends HttpServlet {
                         ZooKeeperUtil.INSTANCE.createNode(currentPath, newProperty, newValue, ServletUtil.INSTANCE.getZookeeper(request, response, zkServerLst[0], globalProps));
                         request.getSession().setAttribute("flashMsg", "Property Saved!");
                         if (ZooKeeperUtil.INSTANCE.checkIfPwdField(newProperty)) {
-                            newValue = ZooKeeperUtil.INSTANCE.SOPA_PIPA;
+                            newValue = ZooKeeperUtil.SOPA_PIPA;
                         }
                         dao.insertHistory((String) request.getSession().getAttribute("authName"), request.getRemoteAddr(), "Saving Property: " + currentPath + "," + newProperty + "=" + newValue);
                     }
@@ -157,7 +157,7 @@ public class Home extends HttpServlet {
                         ZooKeeperUtil.INSTANCE.setPropertyValue(currentPath, newProperty, newValue, ServletUtil.INSTANCE.getZookeeper(request, response, zkServerLst[0], globalProps));
                         request.getSession().setAttribute("flashMsg", "Property Updated!");
                         if (ZooKeeperUtil.INSTANCE.checkIfPwdField(newProperty)) {
-                            newValue = ZooKeeperUtil.INSTANCE.SOPA_PIPA;
+                            newValue = ZooKeeperUtil.SOPA_PIPA;
                         }
                         dao.insertHistory((String) request.getSession().getAttribute("authName"), request.getRemoteAddr(), "Updating Property: " + currentPath + "," + newProperty + "=" + newValue);
                     }
